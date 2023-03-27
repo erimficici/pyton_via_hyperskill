@@ -1,0 +1,40 @@
+import math
+
+a = input()
+if a == "n":
+    loan_principal = int(input())
+    monthly_pay = int(input())
+    interest = float(input())
+    i = interest/(12*100)
+    x = monthly_pay/(monthly_pay-i*loan_principal)
+    n = math.log(x,i+1)
+    q = int(n / 12)
+    w= int(math.ceil(n % 12))
+    print(f'It will take{q} years and {w} months to repay this loan.')
+
+elif a == "a":
+    loan_principal = int(input())
+    periods = int(input())
+    interest = float(input())
+    i = interest/(12*100)
+    A = loan_principal*((i*pow(1+i,periods))/(pow(1+i,periods)-1))
+    A = math.ceil(A)
+    print("Your monthly payment =",A)
+
+elif a == "p":
+    annutiy = float(input())
+    periods = int(input())
+    interest = float(input())
+    i = interest/(12*100)
+    P = annutiy/((i*pow(1+i,periods))/(pow(1+i,periods)-1)) 
+    print("Your loan principal =",P)
+
+else:
+    print("")
+print(loan_principal) 
+print(first_month)
+print(second_month)
+print(third_month)
+print(final_output)  
+   
+
